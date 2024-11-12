@@ -64,13 +64,8 @@
         }
 
         .content {
-            display: none;
             margin: 25px 15px;
             color: #999999;
-        }
-
-        .content.active {
-            display: block;
         }
 
         .meta {
@@ -116,6 +111,11 @@
         .misc-list li {
             margin-bottom: 15px;
         }
+
+        .back-link {
+            margin-bottom: 30px;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -131,70 +131,19 @@
         </div>
 
         <div class="nav">
-            <a href="#education">education</a>
-            <a href="#experience">experience</a>
-            <a href="#misc">misc</a>
+            <a href="education.html">education</a>
+            <a href="experience.html">experience</a>
+            <a href="misc.html">misc</a>
             <a href="https://github.com/ohcomely" target="_blank">github</a>
         </div>
 
         <div class="photo-section">
-            <!-- <img src="your-photo.jpg" alt="ritvik ranjan"> -->
-             <img src="ritvik.jpg" alt="ritvik ranjan">
-        </div>
-
-        <div class="content" id="education-content">
-            <p><span class="year">2023</span>eth zürich, computational sciences</p>
-            <p><span class="year">2021</span>iit delhi, engineering physics</p>
-        </div>
-
-        <div class="content" id="experience-content">
-            <p><span class="year">2023</span>teaching assistant, eth zürich</p>
-            <p><span class="year">2022</span>software developer, groww</p>
-            <p><span class="year">2021</span>software developer, times internet</p>
-            <p><span class="year">2020</span>summer intern, trinity college dublin</p>
-            <p><span class="year">2019</span>summer intern, trinity college dublin</p>
-        </div>
-
-        <div class="content" id="misc-content">
-            <div class="section-title">currently reading</div>
-            <ul class="misc-list">
-                <li>the brothers karamazov, fyodor dostoevsky</li>
-            </ul>
-
-            <div class="section-title">all-time favorites in music</div>
-            <img src="chart.png" alt="albums" style="max-width: 1000px; height: auto; display: block; margin-bottom: 10px;">
-            <!-- <ul class="misc-list">
-                <li>souvlaki, slowdive</li>
-                <li>heaven or las vegas, cocteau twins</li>
-                <li>loveless, my bloody valentine</li>
-            </ul> -->
-<!-- 
-            <div class="section-title">favorite films</div>
-            <ul class="misc-list">
-                <li>stalker, andrei tarkovsky</li>
-                <li>chungking express, wong kar-wai</li>
-                <li>fallen angels, wong kar-wai</li>
-            </ul> -->
+            <img src="ritvik.jpg" alt="ritvik ranjan">
         </div>
 
         <div class="contact">
             rranjan[at]ethz[dot]ch
         </div>
     </div>
-
-    <script>
-        document.querySelectorAll('.nav a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if(e.target.getAttribute('href').startsWith('#')) {
-                    e.preventDefault();
-                    const section = e.target.getAttribute('href').replace('#', '');
-                    document.querySelectorAll('.content').forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    document.getElementById(`${section}-content`)?.classList.add('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
