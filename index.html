@@ -3,30 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ohcomely</title>
+    <title>Ritvik Ranjan</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+        :root {
+            --mbv-pink: #ff95c5;
+            --mbv-red: #ff3366;
+            --blur-amount: 8px;
+        }
 
         body {
             margin: 0;
             padding: 0;
-            background: #0a0a0a;
-            color: #e0e0e0;
+            background: #1a0412;
+            color: #ffffff;
             font-family: 'Space Mono', monospace;
             cursor: default;
             overflow-x: hidden;
         }
 
-        .noise {
+        .loveless-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            opacity: 0.05;
-            z-index: 1;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background: linear-gradient(45deg, var(--mbv-red), var(--mbv-pink));
+            opacity: 0.15;
+            z-index: -1;
         }
 
         .container {
@@ -37,59 +42,76 @@
             z-index: 2;
         }
 
-        .glitch-wrapper {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
+        .devanagari-header {
+            font-size: 12rem;
+            text-align: center;
+            color: var(--mbv-pink);
+            margin: 2rem 0;
+            text-shadow: 
+                2px 2px var(--mbv-red),
+                4px 4px rgba(255, 51, 102, 0.5);
+            animation: float 6s ease-in-out infinite;
+            filter: blur(var(--blur-amount));
+            transition: filter 0.3s ease;
         }
 
-        .glitch {
-            font-size: 4rem;
-            font-weight: bold;
-            position: relative;
-            text-shadow: 0.05em 0 0 rgba(255,0,0,0.75),
-                         -0.05em -0.025em 0 rgba(0,255,0,0.75),
-                         0.025em 0.05em 0 rgba(0,0,255,0.75);
-            animation: glitch 500ms infinite;
+        .devanagari-header:hover {
+            filter: blur(0);
         }
 
-        @keyframes glitch {
-            0% { transform: translate(0) }
-            20% { transform: translate(-2px, 2px) }
-            40% { transform: translate(-2px, -2px) }
-            60% { transform: translate(2px, 2px) }
-            80% { transform: translate(2px, -2px) }
-            100% { transform: translate(0) }
+        @keyframes float {
+            0% { transform: translateY(0px) }
+            50% { transform: translateY(-20px) }
+            100% { transform: translateY(0px) }
         }
 
         .content {
             margin-top: 4rem;
             line-height: 1.6;
+            backdrop-filter: blur(4px);
+            background: rgba(26, 4, 18, 0.3);
+            padding: 2rem;
+            border-radius: 8px;
         }
 
         .section {
             margin-bottom: 3rem;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
             padding: 1rem;
             border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
         }
 
         .section:hover {
-            border-color: #e0e0e0;
+            border-color: var(--mbv-pink);
             transform: translateX(10px);
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 149, 197, 0.1);
+        }
+
+        .section:hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 149, 197, 0.1));
+            filter: blur(var(--blur-amount));
         }
 
         a {
-            color: #e0e0e0;
+            color: var(--mbv-pink);
             text-decoration: none;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid var(--mbv-pink);
             transition: all 0.3s ease;
+            position: relative;
         }
 
         a:hover {
-            color: #ff69b4;
-            border-color: #ff69b4;
+            color: #ffffff;
+            border-color: #ffffff;
+            filter: blur(1px);
         }
 
         .nav {
@@ -97,11 +119,25 @@
             display: flex;
             gap: 2rem;
             flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .bio {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.1rem;
+            color: var(--mbv-pink);
+            filter: blur(0.5px);
+            transition: filter 0.3s ease;
+        }
+
+        .bio:hover {
+            filter: blur(0);
         }
 
         @media (max-width: 600px) {
-            .glitch {
-                font-size: 2.5rem;
+            .devanagari-header {
+                font-size: 8rem;
             }
             
             .container {
@@ -109,51 +145,67 @@
             }
         }
 
-        .blur-effect {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, transparent 0%, rgba(10,10,10,0.8) 80%);
-            pointer-events: none;
-            z-index: 1;
+        .hover-blur {
+            transition: filter 0.3s ease;
+        }
+
+        .hover-blur:hover {
+            filter: blur(var(--blur-amount));
+        }
+
+        h2 {
+            color: var(--mbv-pink);
+            filter: blur(1px);
+            transition: filter 0.3s ease;
+        }
+
+        h2:hover {
+            filter: blur(0);
         }
     </style>
 </head>
 <body>
-    <div class="noise"></div>
-    <div class="blur-effect"></div>
+    <div class="loveless-bg"></div>
     
     <div class="container">
-        <div class="glitch-wrapper">
-            <div class="glitch">ohcomely</div>
+        <div class="devanagari-header">ऋ</div>
+
+        <div class="bio">
+            Ritvik Ranjan
+            <br>
+            Master's Student & Software Engineer
         </div>
 
         <div class="nav">
             <a href="#about">about</a>
+            <a href="#experience">experience</a>
             <a href="#projects">projects</a>
-            <a href="#thoughts">thoughts</a>
+            <a href="#research">research</a>
             <a href="https://github.com/ohcomely">github</a>
         </div>
 
         <div class="content">
             <div class="section" id="about">
                 <h2>about</h2>
-                <p>Welcome to my digital space. This is where I experiment with code and creativity.</p>
+                <p>Master's student exploring the intersection of software engineering and academic research. Previously worked as a software engineer, now pursuing deeper knowledge in computer science.</p>
+            </div>
+
+            <div class="section" id="experience">
+                <h2>experience</h2>
+                <p>Software Engineering background with industry experience in building robust applications and systems.</p>
+                <!-- Add your specific experience here -->
             </div>
 
             <div class="section" id="projects">
                 <h2>projects</h2>
-                <p>A collection of things I've built and broken.</p>
+                <p>A collection of technical experiments and software projects.</p>
                 <!-- Add your projects here -->
             </div>
 
-            <div class="section" id="thoughts">
-                <h2>thoughts</h2>
-                <p>Random musings and observations.</p>
-                <!-- Add your blog posts or thoughts here -->
+            <div class="section" id="research">
+                <h2>research</h2>
+                <p>Current research interests and academic pursuits.</p>
+                <!-- Add your research interests/work here -->
             </div>
         </div>
     </div>
