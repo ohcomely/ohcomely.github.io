@@ -57,17 +57,107 @@
             content: "// ";
             color: #ff95c5;
         }
+
+        .experience-block {
+            margin-bottom: 40px;
+        }
+
+        .role {
+            color: #f0f0f0;
+            margin-bottom: 8px;
+        }
+
+        .place {
+            color: #666666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #999999;
+        }
+
+        .details li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+        }
+
+        .details li::before {
+            content: ">";
+            color: #ff95c5;
+            margin-right: 8px;
+            margin-left: -15px;
+        }
+
+        .project-section {
+            margin-top: 50px;
+        }
+
+        .section-title {
+            color: #666666;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <a href="index.html" class="back-link">back</a>
+        
         <div class="content">
-            <p><span class="year">2023</span>teaching assistant, eth zürich</p>
-            <p><span class="year">2022</span>software developer, groww</p>
-            <p><span class="year">2021</span>software developer, times internet</p>
-            <p><span class="year">2020</span>summer intern, trinity college dublin</p>
-            <p><span class="year">2019</span>summer intern, trinity college dublin</p>
+            <div class="experience-block">
+                <div class="role"><span class="year">2023</span>teaching assistant</div>
+                <div class="place">eth zürich, switzerland</div>
+                <ul class="details">
+                    <li>helping and assessing bachelor and master students with c++ programming techniques</li>
+                    <li>teaching scientific software libraries and hardware components</li>
+                </ul>
+            </div>
+
+            <div class="experience-block">
+                <div class="role"><span class="year">2022</span>software developer</div>
+                <div class="place">groww, bangalore</div>
+                <ul class="details">
+                    <li>built backend infrastructure for credit services</li>
+                    <li>developed business rule engine for credit assessment</li>
+                    <li>integrated real-time credit score reports from multiple bureaus</li>
+                </ul>
+            </div>
+
+            <div class="experience-block">
+                <div class="role"><span class="year">2021</span>software developer</div>
+                <div class="place">times internet, gurugram</div>
+                <ul class="details">
+                    <li>developed restful apis for javascript-based front-end</li>
+                    <li>created golang packages for cryptographic exchanges with banks</li>
+                </ul>
+            </div>
+
+            <div class="experience-block">
+                <div class="role"><span class="year">2020</span>research intern</div>
+                <div class="place">trinity college dublin, ireland</div>
+                <ul class="details">
+                    <li>hubbard model at finite temperature</li>
+                    <li>formulated universal functionals at different hubbard parameters</li>
+                </ul>
+            </div>
+
+            <div class="experience-block">
+                <div class="role"><span class="year">2019</span>research intern</div>
+                <div class="place">trinity college dublin, ireland</div>
+                <ul class="details">
+                    <li>unsupervised learning for identifying information</li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <div class="section-title">// current projects</div>
+                <ul class="details">
+                    <li>practical workload co-location with rfaas, spcl, eth zürich</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
