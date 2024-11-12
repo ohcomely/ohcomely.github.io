@@ -59,20 +59,8 @@
             line-height: 1;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            margin: 25px 0;
-        }
-
-        .contact {
-            margin-top: 50px;
-            color: #666666;
-        }
-
-        .meta {
-            color: #666666;
-            margin-top: 4px;
+        .header {
+            margin-bottom: 20px;
         }
 
         .content {
@@ -81,32 +69,52 @@
             color: #999999;
         }
 
-        .content p {
-            margin: 15px 0;
-        }
-
-        /* Simple fade effect when switching sections */
         .content.active {
             display: block;
         }
 
-        .projects {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .projects li {
-            margin: 10px 0;
+        .meta {
+            color: #666666;
+            margin-top: 4px;
         }
 
         .year {
             color: #666666;
             margin-right: 10px;
+            display: inline-block;
+            width: 60px;
         }
 
-        .header {
-            margin-bottom: 20px;
+        .contact {
+            margin-top: 50px;
+            color: #666666;
+        }
+
+        .photo-section {
+            margin-top: 50px;
+            margin-left: 15px;
+        }
+
+        .photo-section img {
+            max-width: 500px;
+            height: auto;
+            display: block;
+        }
+
+        .section-title {
+            color: #666666;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .misc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .misc-list li {
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -116,48 +124,66 @@
             <div class="devanagari">ऋ</div>
             <h1>ritvik ranjan</h1>
             <div class="meta">
-                master's student
+                msc student at eth zürich
                 <br>
-                d-math, eth zürich
+                currently in switzerland
             </div>
         </div>
 
         <div class="nav">
-            <a href="#work">work</a>
-            <a href="#research">research</a>
-            <a href="#projects">projects</a>
+            <a href="#education">education</a>
+            <a href="#experience">experience</a>
+            <a href="#misc">misc</a>
             <a href="https://github.com/ohcomely" target="_blank">github</a>
         </div>
 
-        <div class="content" id="work-content">
-            <p>
-                software engineer with experience in building systems and applications.
-                currently focused on distributed systems and cloud architecture.
-            </p>
+        <div class="photo-section">
+            <img src="your-photo.jpg" alt="ritvik ranjan">
         </div>
 
-        <div class="content" id="research-content">
-            <p>
-                exploring intersections of distributed systems and reliability.
-                interested in system design patterns and scalability.
-            </p>
+        <div class="content" id="education-content">
+            <p><span class="year">2023</span>eth zürich, computational sciences</p>
+            <p><span class="year">2021</span>iit delhi, engineering physics</p>
         </div>
 
-        <div class="content" id="projects-content">
-            <ul class="projects">
-                <li><span class="year">2023</span>distributed cache implementation</li>
-                <li><span class="year">2022</span>real-time data processing pipeline</li>
-                <li><span class="year">2021</span>kubernetes operator framework</li>
+        <div class="content" id="experience-content">
+            <p><span class="year">2023</span>teaching assistant, eth zürich</p>
+            <p><span class="year">2022</span>software developer, groww</p>
+            <p><span class="year">2021</span>software developer, times internet</p>
+            <p><span class="year">2020</span>research intern, trinity college dublin</p>
+            <p>hubbard model at finite temperature</p>
+            <p><span class="year">2019</span>research intern, trinity college dublin</p>
+            <p>unsupervised learning for identifying information</p>
+        </div>
+
+        <div class="content" id="misc-content">
+            <div class="section-title">currently reading</div>
+            <ul class="misc-list">
+                <li>the dispossessed, ursula k. le guin</li>
+                <li>beloved, toni morrison</li>
+            </ul>
+
+            <div class="section-title">music in rotation</div>
+            <ul class="misc-list">
+                <li>souvlaki, slowdive</li>
+                <li>heaven or las vegas, cocteau twins</li>
+                <li>loveless, my bloody valentine</li>
+            </ul>
+
+            <div class="section-title">favorite films</div>
+            <ul class="misc-list">
+                <li>stalker, andrei tarkovsky</li>
+                <li>chungking express, wong kar-wai</li>
+                <li>fallen angels, wong kar-wai</li>
             </ul>
         </div>
 
         <div class="contact">
-            ritvik[at]proton[dot]me
+            rranjan[at]ethz[dot]ch
         </div>
     </div>
 
     <script>
-        // Simple navigation
         document.querySelectorAll('.nav a').forEach(link => {
             link.addEventListener('click', (e) => {
                 if(e.target.getAttribute('href').startsWith('#')) {
