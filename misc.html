@@ -5,12 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>misc - ritvik ranjan</title>
     <style>
-        /* Copy all styles from main page */
+        body {
+            margin: 0;
+            padding: 45px;
+            background: #111111;
+            color: #f0f0f0;
+            font-family: "Courier New", monospace;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 650px;
+        }
+
+        h1 {
+            font-size: 15px;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #ff95c5;
+        }
+
+        .content {
+            margin: 25px 15px;
+            color: #999999;
+        }
+
+        .section-title {
+            color: #666666;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .misc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .misc-list li {
+            margin-bottom: 15px;
+        }
+
+        .back-link {
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .back-link::before {
+            content: "// ";
+            color: #ff95c5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">← back</a>
+        <a href="index.html" class="back-link">back</a>
         <div class="content">
             <div class="section-title">currently reading</div>
             <ul class="misc-list">
@@ -18,7 +85,7 @@
             </ul>
 
             <div class="section-title">all-time favorites in music</div>
-            <img src="chart.png" alt="albums" style="max-width: 1000px; height: auto; display: block; margin-bottom: 10px;">
+            <img src="assets/chart.png" alt="albums">
         </div>
     </div>
 </body>

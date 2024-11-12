@@ -5,12 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>experience - ritvik ranjan</title>
     <style>
-        /* Copy all styles from main page */
+        body {
+            margin: 0;
+            padding: 45px;
+            background: #111111;
+            color: #f0f0f0;
+            font-family: "Courier New", monospace;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 650px;
+        }
+
+        h1 {
+            font-size: 15px;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #ff95c5;
+        }
+
+        .content {
+            margin: 25px 15px;
+            color: #999999;
+        }
+
+        .year {
+            color: #666666;
+            margin-right: 10px;
+            display: inline-block;
+            width: 60px;
+        }
+
+        .back-link {
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .back-link::before {
+            content: "// ";
+            color: #ff95c5;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">← back</a>
+        <a href="index.html" class="back-link">back</a>
         <div class="content">
             <p><span class="year">2023</span>teaching assistant, eth zürich</p>
             <p><span class="year">2022</span>software developer, groww</p>
