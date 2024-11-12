@@ -5,208 +5,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ritvik Ranjan</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
-
-        :root {
-            --mbv-pink: #ff95c5;
-            --mbv-red: #ff3366;
-            --blur-amount: 8px;
-        }
-
         body {
             margin: 0;
             padding: 0;
-            background: #1a0412;
+            background: #000000;
             color: #ffffff;
-            font-family: 'Space Mono', monospace;
-            cursor: default;
-            overflow-x: hidden;
+            font-family: "Courier New", Courier, monospace;
         }
 
-        .loveless-bg {
+        #bg-image {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, var(--mbv-red), var(--mbv-pink));
-            opacity: 0.15;
+            opacity: 0.5;
             z-index: -1;
+            /* Add your Loveless background image here */
+            background-image: url('loveless.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .container {
-            max-width: 800px;
+            width: 750px;
             margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 2;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 20px;
+            border: 1px solid #ff69b4;
         }
 
-        .devanagari-header {
-            font-size: 12rem;
+        .header {
             text-align: center;
-            color: var(--mbv-pink);
-            margin: 2rem 0;
-            text-shadow: 
-                2px 2px var(--mbv-red),
-                4px 4px rgba(255, 51, 102, 0.5);
-            animation: float 6s ease-in-out infinite;
-            filter: blur(var(--blur-amount));
-            transition: filter 0.3s ease;
+            margin: 20px 0;
+            border-bottom: 2px solid #ff69b4;
+            padding-bottom: 20px;
         }
 
-        .devanagari-header:hover {
-            filter: blur(0);
+        .devanagari {
+            font-size: 72px;
+            color: #ff69b4;
+            margin: 0;
+            padding: 0;
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px) }
-            50% { transform: translateY(-20px) }
-            100% { transform: translateY(0px) }
-        }
-
-        .content {
-            margin-top: 4rem;
-            line-height: 1.6;
-            backdrop-filter: blur(4px);
-            background: rgba(26, 4, 18, 0.3);
-            padding: 2rem;
-            border-radius: 8px;
-        }
-
-        .section {
-            margin-bottom: 3rem;
-            transition: all 0.5s ease;
-            padding: 1rem;
-            border: 1px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section:hover {
-            border-color: var(--mbv-pink);
-            transform: translateX(10px);
-            background: rgba(255, 149, 197, 0.1);
-        }
-
-        .section:hover::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 149, 197, 0.1));
-            filter: blur(var(--blur-amount));
-        }
-
-        a {
-            color: var(--mbv-pink);
-            text-decoration: none;
-            border-bottom: 1px solid var(--mbv-pink);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        a:hover {
-            color: #ffffff;
-            border-color: #ffffff;
-            filter: blur(1px);
+        .name {
+            font-size: 24px;
+            color: #ff69b4;
+            margin: 10px 0;
         }
 
         .nav {
-            margin-top: 2rem;
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .bio {
             text-align: center;
-            margin: 2rem 0;
-            font-size: 1.1rem;
-            color: var(--mbv-pink);
-            filter: blur(0.5px);
-            transition: filter 0.3s ease;
+            margin: 20px 0;
+            padding: 10px;
+            background: #1a1a1a;
+            border: 1px solid #ff69b4;
         }
 
-        .bio:hover {
-            filter: blur(0);
+        .nav a {
+            color: #ff69b4;
+            text-decoration: none;
+            padding: 0 15px;
+            font-size: 14px;
         }
 
-        @media (max-width: 600px) {
-            .devanagari-header {
-                font-size: 8rem;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
+        .nav a:hover {
+            color: #ffffff;
         }
 
-        .hover-blur {
-            transition: filter 0.3s ease;
-        }
-
-        .hover-blur:hover {
-            filter: blur(var(--blur-amount));
+        .section {
+            margin: 30px 0;
+            padding: 10px;
+            border: 1px solid #333;
+            background: #0d0d0d;
         }
 
         h2 {
-            color: var(--mbv-pink);
-            filter: blur(1px);
-            transition: filter 0.3s ease;
+            color: #ff69b4;
+            font-size: 18px;
+            margin: 0 0 10px 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
         }
 
-        h2:hover {
-            filter: blur(0);
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 1px solid #333;
+        }
+
+        /* Old-school scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            background: #000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff69b4;
+            border: 1px solid #000;
+        }
+
+        /* Basic responsiveness */
+        @media (max-width: 800px) {
+            .container {
+                width: 90%;
+                margin: 10px auto;
+            }
+        }
+
+        /* Vintage counter */
+        .counter {
+            text-align: center;
+            margin: 20px 0;
+            font-family: "Digital", "Courier New", monospace;
+            color: #ff69b4;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
-    <div class="loveless-bg"></div>
+    <div id="bg-image"></div>
     
     <div class="container">
-        <div class="devanagari-header">ऋ</div>
-
-        <div class="bio">
-            Ritvik Ranjan
-            <br>
-            Master's Student & Software Engineer
+        <div class="header">
+            <div class="devanagari">ऋ</div>
+            <div class="name">RITVIK RANJAN</div>
         </div>
 
         <div class="nav">
-            <a href="#about">about</a>
-            <a href="#experience">experience</a>
-            <a href="#projects">projects</a>
-            <a href="#research">research</a>
-            <a href="https://github.com/ohcomely">github</a>
+            <a href="#about">ABOUT</a> |
+            <a href="#experience">EXPERIENCE</a> |
+            <a href="#projects">PROJECTS</a> |
+            <a href="#research">RESEARCH</a> |
+            <a href="https://github.com/ohcomely">GITHUB</a>
         </div>
 
-        <div class="content">
-            <div class="section" id="about">
-                <h2>about</h2>
-                <p>Master's student exploring the intersection of software engineering and academic research. Previously worked as a software engineer, now pursuing deeper knowledge in computer science.</p>
-            </div>
+        <div class="section" id="about">
+            <h2>// ABOUT</h2>
+            <p>Master's student exploring computer science and software engineering. Previously worked as a software engineer.</p>
+        </div>
 
-            <div class="section" id="experience">
-                <h2>experience</h2>
-                <p>Software Engineering background with industry experience in building robust applications and systems.</p>
-                <!-- Add your specific experience here -->
-            </div>
+        <div class="section" id="experience">
+            <h2>// EXPERIENCE</h2>
+            <p>Software Engineering background with industry experience in building robust applications and systems.</p>
+            <!-- Add your specific experience here -->
+        </div>
 
-            <div class="section" id="projects">
-                <h2>projects</h2>
-                <p>A collection of technical experiments and software projects.</p>
-                <!-- Add your projects here -->
-            </div>
+        <div class="section" id="projects">
+            <h2>// PROJECTS</h2>
+            <p>A collection of technical experiments and software projects.</p>
+            <!-- Add your projects here -->
+        </div>
 
-            <div class="section" id="research">
-                <h2>research</h2>
-                <p>Current research interests and academic pursuits.</p>
-                <!-- Add your research interests/work here -->
-            </div>
+        <div class="section" id="research">
+            <h2>// RESEARCH</h2>
+            <p>Current research interests and academic pursuits.</p>
+            <!-- Add your research interests/work here -->
+        </div>
+
+        <div class="counter">
+            Visitors: 000372
+        </div>
+
+        <div class="footer">
+            © 2024 Ritvik Ranjan | Last updated: 11.12.24
+            <br>
+            Best viewed in 800x600
         </div>
     </div>
 </body>
